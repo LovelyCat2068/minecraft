@@ -1,4 +1,4 @@
-var canvas = new fabric.canvas('canvas');
+var canvas = new fabric.Canvas('canvas');
 
 player_x = 30;
 player_y = 30;
@@ -19,12 +19,12 @@ function update_img(){
     });
 }
 
-function blocks(get_image){
+function new_image(get_image){
     fabric.Image.fromURL(get_image, function(Img){
         block_object = Img;
         block_object.scaleToWidth(block_width);
-        block_width.scaleToHeight(block_height);
-        block_object.set({top: player_x, left: player_y});
+        block_object.scaleToHeight(block_height);
+        block_object.set({top: player_y, left: player_x});
         canvas.add(block_object);
     });
 }
@@ -97,7 +97,7 @@ function keyisdown(e){
 
     if(keypressed == '84'){
         console.log("trunk - 84")
-        new_image("trunk.png");
+        new_image("trunk.jpg");
     }
 
     if(keypressed == '85'){
@@ -112,7 +112,7 @@ function keyisdown(e){
 
     if(keypressed == '89'){
         console.log("yellow_wall - y")
-        new_image("yellow_wall.jpg");
+        new_image("yellow_wall.png");
     }
 }
 
